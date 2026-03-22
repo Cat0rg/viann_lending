@@ -108,7 +108,7 @@
 }
 
 /* Адаптив для мобильных (480px) */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .header_container {
     background-position: 65% center; /* Сдвигаем фото, чтобы лицо модели было видно */
 
