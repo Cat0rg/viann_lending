@@ -1,0 +1,142 @@
+.container {
+  width: 100%;
+  background-color: rgb(69, 72, 80);
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: white;
+  height: 100vh;
+}
+
+.about_container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.about_left {
+  flex: 1;
+  min-width: 200px;
+  text-align: left;
+}
+
+.title {
+  font-size: 32px;
+}
+
+.hr {
+  margin: 20px 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.likes {
+  max-width: 300px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.fcItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transform: translateX(-50px);
+  opacity: 0;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+}
+.fcItem:hover {
+  transform: scale(1.2);
+}
+.showItem {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  color: white;
+  background-color: rgb(226, 43, 113);
+  cursor: pointer;
+  transition:
+    0.3s ease,
+    transform 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  background-color: rgb(209, 0, 80);
+}
+
+.about_right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about_right img {
+  max-height: 600px;
+  border-radius: 15px;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .about_container {
+    align-items: center;
+    text-align: center;
+  }
+  .container{
+      background-image: url("/public/images/photo7.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+    .about_right img {
+    display: none;
+  }
+  .about_left,
+  .about_right {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .about_right img {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  .container{
+      background-image: url("/public/images/photo7.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+  .about_container {
+    display: block;
+    width: 100%;
+    max-height: 100vh;
+  }
+  .about_right img {
+    display: none;
+  }
+}
