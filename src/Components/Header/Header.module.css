@@ -107,14 +107,14 @@
   color: var(--color-primary-navy);
 }
 
-/* Адаптив для мобильных (480px) */
 @media (max-width: 768px) {
   .header_container {
-    background-position: 65% center; /* Сдвигаем фото, чтобы лицо модели было видно */
+    background-position: 65% center;
 
     height: 100vh;
-    display: block;
+    display: flex;
     text-align: left;
+    align-items: center;
   }
 
   .header_content {
@@ -122,10 +122,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+    align-items: center;
     min-height: 100vh;
     text-align: center;
-    width: 100%;
+    width: 100vh;
   }
 
   .header_content h1 {
@@ -137,14 +137,14 @@
     font-size: 18px;
     padding: 0 10px;
   }
-  .header_container .centre{
+  .header_container .centre {
     text-align: left;
   }
-  .header_content .centre p{
+  .header_content .centre p {
     padding-left: 15px;
   }
   .header_content button {
-    width: 80%; /* Кнопка на мобильных пошире */
+    width: 80%;
     margin-bottom: 50px;
     padding: 20px 0px;
   }
