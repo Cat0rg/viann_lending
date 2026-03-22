@@ -145,7 +145,7 @@
   }
   .header_content button {
     width: 80%; /* Кнопка на мобильных пошире */
-    margin-bottom: 10px;
+    margin-bottom: 50px;
     padding: 20px 0px;
   }
 }
