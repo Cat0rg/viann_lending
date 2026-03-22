@@ -38,7 +38,7 @@ export default function About() {
           <button className={style.button}>Больше фото в Instagram</button>
         </div>
         <div className={style.about_right}>
-          <img src="photo7.jpg" alt="VIANN" />
+          <img src="/photo7.jpg" alt="VIANN" />
         </div>
       </div>
     </div>
