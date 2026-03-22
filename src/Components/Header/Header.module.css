@@ -1,4 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@400;500&family=Playfair+Display:wght@700&display=swap");
+
+:root {
+  --color-primary-navy: rgb(26, 43, 72);
+  --color-accent-gold: rgb(197, 160, 130);
+  --color-text-light: rgb(229, 213, 197);
+  --color-bg-dark: rgb(45, 45, 45);
+  --color-btn-gradient: linear-gradient(135deg, #1a2b48 0%, #0d1624 100%);
+}
 
 .header_container {
   width: 100%;
@@ -7,29 +15,33 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   display: flex;
   align-items: center;
   justify-content: flex-start;
   color: white;
   position: relative;
+  overflow: hidden; /* Чтобы вылетающий текст не создавал скролл */
 }
 
 .header_content {
-  margin-left: 30vw;
+  margin-left: 15vw; /* Уменьшил отступ, чтобы текст не прижимался вправо */
+  max-width: 500px;
 }
 
-/* начальное состояние */
+/* Анимация появления */
 .header_content h1,
 .header_content h2,
 .header_content p,
 .header_content button {
-  transform: translateX(-1050px);
+  transform: translateX(
+    -100px
+  ); /* Уменьшил дистанцию, 1050px — слишком много */
   opacity: 0;
-  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 1s ease-out;
 }
 
-/* поочередное появление */
 .header_content h1.show {
   transform: translateX(0);
   opacity: 1;
@@ -51,99 +63,89 @@
   transition-delay: 0.8s;
 }
 
+/* Стили текста */
 .header_content h1 {
   font-family: "Dancing Script", cursive;
-  font-weight: bold;
   font-size: 82px;
-  font-style: normal;
+  color: var(--color-accent-gold);
+  margin-bottom: 10px;
 }
 
 .header_content h2 {
   font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--color-text-light);
+  line-height: 1.2;
 }
 
 .header_content p {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  margin-top: 20px;
+  color: rgba(229, 213, 197, 0.8);
+  margin-bottom: 30px;
 }
 
+/* Новая кнопка */
 .header_content button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  border-radius: 15px;
-  color: white;
-  background-color: rgb(226, 43, 113);
+  padding: 14px 28px;
+  border-radius: 30px;
+  border: none;
+  color: var(--color-text-light);
+  background: var(--color-btn-gradient);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .header_content button:hover {
-  transform: scale(1.05);
-  background-color: rgb(209, 0, 80);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  background: var(--color-accent-gold);
+  color: var(--color-primary-navy);
 }
 
-/* адаптив */
-@media (max-width: 1000px) {
-  .header_content {
-    margin-left: 5vh;
-  }
-}
-
-@media (max-width: 768px) {
+/* Адаптив для мобильных (480px) */
+@media (max-width: 480px) {
   .header_container {
+    background-position: 65% center; /* Сдвигаем фото, чтобы лицо модели было видно */
+
     height: 100vh;
-    justify-content: flex-start;
-    text-align: center;
+    display: block;
+    text-align: left;
   }
 
   .header_content {
     margin-left: 0;
-    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 100vh;
+    text-align: center;
+    width: 100%;
   }
 
   .header_content h1 {
-    font-size: 42px;
+    font-size: 54px;
+    margin-top: 10px;
   }
 
   .header_content h2 {
-    font-size: 16px;
+    font-size: 18px;
+    padding: 0 10px;
   }
-
-  .header_content p {
-    font-size: 14px;
-  }
-
-  .header_content button {
-    padding: 8px 16px;
-    font-size: 14px;
-    margin-top: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .header_container {
-    height: 100vh;
-    justify-content: flex-start;
+  .header_container .centre{
     text-align: left;
   }
-
-  .header_content h1 {
-    font-size: 28px;
+  .header_content .centre p{
+    padding-left: 15px;
   }
-
-  .header_content h2 {
-    font-size: 14px;
-  }
-
-  .header_content p {
-    font-size: 12px;
-  }
-
   .header_content button {
-    padding: 6px 12px;
-    font-size: 12px;
+    width: 80%; /* Кнопка на мобильных пошире */
+    margin-bottom: 10px;
+    padding: 20px 0px;
   }
 }

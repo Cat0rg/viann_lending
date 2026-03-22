@@ -8,7 +8,8 @@
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   color: white;
-  height: 100vh;
+
+  min-height: 100vh; /* вместо height */
 }
 
 .about_container {
@@ -24,6 +25,10 @@
   flex: 1;
   min-width: 200px;
   text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* кнопка вниз */
 }
 
 .title {
@@ -34,48 +39,53 @@
   margin: 20px 0;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
-
+a{
+    text-decoration: none;
+    color: white;
+}
 .likes {
-  max-width: 300px;
   margin-top: 10px;
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 10px;
 }
+
 .fcItem {
   display: flex;
   align-items: center;
   gap: 8px;
   transform: translateX(-50px);
   opacity: 0;
-  transition:
-    transform 0.5s ease,
-    opacity 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
+
 .fcItem:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
+
 .showItem {
   transform: translateX(0);
   opacity: 1;
 }
 
-.button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  border-radius: 15px;
-  color: white;
-  background-color: rgb(226, 43, 113);
-  cursor: pointer;
-  transition:
-    0.3s ease,
-    transform 0.3s ease;
-}
+
 
 .button:hover {
   transform: scale(1.05);
   background-color: rgb(209, 0, 80);
+}
+
+.button {
+  padding: 14px 28px;
+  border-radius: 30px;
+  border: none;
+  color: var(--color-text-light);
+  background: var(--color-btn-gradient);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .about_right {
@@ -91,52 +101,53 @@
   height: auto;
 }
 
+
+
 @media (max-width: 768px) {
   .about_container {
-    align-items: center;
+    flex-direction: column;
     text-align: center;
   }
-  .container{
-      background-image: url("/photo7.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-  }
-    .about_right img {
-    display: none;
-  }
-  .about_left,
-  .about_right {
-    width: 100%;
-    min-width: unset;
-  }
 
-  .about_right img {
-    max-height: 300px;
+  .about_left {
+    align-items: center;
+    text-align: center;
+    
   }
-}
-
-@media (max-width: 480px) {
-  .title {
-    font-size: 28px;
+  .likes{
+    align-items: center;
   }
 
   .button {
-    padding: 8px 16px;
-    font-size: 14px;
+    align-self: center;
   }
-  .container{
-      background-image: url("/photo7.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-  }
-  .about_container {
-    display: block;
-    width: 100%;
-    max-height: 100vh;
-  }
-  .about_right img {
+
+  .about_right {
     display: none;
+  }
+
+  .container {
+    background-image: url("/photo7.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 26px;
+  }
+
+  .button {
+    width: 80%; /* Кнопка на мобильных пошире */
+    margin-bottom: 10px;
+    padding: 20px 0px;
+    font-size: 18px;
+  }
+
+  .container {
+    padding: 30px 15px;
   }
 }
