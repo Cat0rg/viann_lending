@@ -40,7 +40,7 @@ background: linear-gradient(172deg,rgba(235, 221, 221, 1) 0%, rgba(3, 5, 10, 1) 
 
 .albom_image {
   width: 100%;
-  height: 50dvh;
+  height: 300px;
   object-fit: cover;
   border-radius: 20px;
   display: block;
@@ -87,7 +87,7 @@ background: linear-gradient(172deg,rgba(235, 221, 221, 1) 0%, rgba(3, 5, 10, 1) 
   }
 
   .albom_image {
-    max-height: 300px;
+    max-height: 50dvh;
     border-radius: 25px;
   }
 
@@ -96,6 +96,13 @@ background: linear-gradient(172deg,rgba(235, 221, 221, 1) 0%, rgba(3, 5, 10, 1) 
     justify-content: center;
     gap: 10px;
     margin: 10px 0 40px;
+  }
+  .btn{
+    margin: 0;
+}
+.pagination{
+      padding-bottom: 0;
+    margin: 0;
   }
 }
 
@@ -110,7 +117,6 @@ background: linear-gradient(172deg,rgba(235, 221, 221, 1) 0%, rgba(3, 5, 10, 1) 
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
-  margin-top: 15px;
 }
 
 .activeDot {
