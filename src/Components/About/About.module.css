@@ -15,6 +15,7 @@
   padding: 40px 20px;
   color: white;
   min-height: 100svh; 
+  overflow-x: hidden; /* Тот самый фикс от дерганого скролла */
 }
 
 .about_container {
