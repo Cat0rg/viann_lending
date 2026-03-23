@@ -1,15 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+*, p, span {
+  font-family: "Comfortaa", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .container {
   width: 100%;
   background-color: rgb(69, 72, 80);
   display: flex;
   justify-content: center;
   padding: 40px 20px;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
   color: white;
-
-  min-height: 100vh; /* вместо height */
+  min-height: 100vh;
 }
 
 .about_container {
@@ -24,25 +29,31 @@
 .about_left {
   flex: 1;
   min-width: 200px;
-  text-align: left;
-
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* кнопка вниз */
+  justify-content: flex-start;
+  text-align: left;
 }
 
 .title {
   font-size: 32px;
+  margin-bottom: 10px;
 }
 
 .hr {
   margin: 20px 0;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
-a{
-    text-decoration: none;
-    color: white;
+
+p {
+  line-height: 1.6;
 }
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
 .likes {
   margin-top: 10px;
   display: flex;
@@ -59,33 +70,48 @@ a{
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-.fcItem:hover {
-  transform: scale(1.1);
-}
-
-.showItem {
+/* Анимация для элементов списка */
+.about_container.inView .fcItem {
   transform: translateX(0);
   opacity: 1;
 }
 
+/* Задержки для каждого элемента */
+.fcItem.item0 { transition-delay: 0.1s; }
+.fcItem.item1 { transition-delay: 0.3s; }
+.fcItem.item2 { transition-delay: 0.5s; }
 
-
-.button:hover {
-  transform: scale(1.05);
-  background-color: rgb(209, 0, 80);
+.fcItem:hover {
+  transform: scale(1.1);
 }
 
 .button {
   padding: 14px 28px;
   border-radius: 30px;
   border: none;
-  color: var(--color-text-light);
-  background: var(--color-btn-gradient);
+  color: #fff;
+  background: linear-gradient(90deg, #ff0080, #ff8c00);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
-  transition: all 0.3s ease;
+  margin-top: 40px;
+  transform: translateX(-50px);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease, background-color 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.about_container.inView .showButton {
+  transform: translateX(0);
+  opacity: 1;
+  transition-delay: 0.7s;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #ff3385, #ffaa33);
 }
 
 .about_right {
@@ -96,12 +122,10 @@ a{
 
 .about_right img {
   max-height: 600px;
-  border-radius: 15px;
   max-width: 100%;
   height: auto;
+  border-radius: 15px;
 }
-
-
 
 @media (max-width: 768px) {
   .about_container {
@@ -112,9 +136,10 @@ a{
   .about_left {
     align-items: center;
     text-align: center;
-    
+    justify-content: space-between;
   }
-  .likes{
+
+  .likes {
     align-items: center;
   }
 
@@ -134,16 +159,15 @@ a{
   }
 }
 
-
 @media (max-width: 480px) {
   .title {
     font-size: 26px;
   }
 
   .button {
-    width: 80%; /* Кнопка на мобильных пошире */
+    width: 80%;
     margin-bottom: 10px;
-    padding: 20px 0px;
+    padding: 20px 0;
     font-size: 18px;
   }
 
