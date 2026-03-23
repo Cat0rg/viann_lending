@@ -1,0 +1,45 @@
+.container {
+  width: 100%;
+  height: auto; 
+  overflow-y: visible;
+}
+
+@media (max-width: 768px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+  }
+
+  .container {
+    height: 100vh;    
+    overflow-y: scroll; 
+    scroll-snap-type: y mandatory; 
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; 
+  }
+
+  .container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .container > section, 
+  .container > div,
+  .container > header {
+    height: 100vh;      
+    width: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    flex-shrink: 0;       
+  }
+}
+
+/* Стили для десктопа (от 769px) */
+@media (min-width: 769px) {
+  .container > section, 
+  .container > div, 
+  .container > header {
+    height: auto;        
+    min-height: 100vh;    
+  }
+}
