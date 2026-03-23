@@ -87,7 +87,7 @@ background: linear-gradient(172deg,rgba(235, 221, 221, 1) 0%, rgba(3, 5, 10, 1) 
   }
 
   .albom_image {
-    height: 450px;
+    max-height: 300px;
     border-radius: 25px;
   }
 

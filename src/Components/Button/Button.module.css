@@ -35,7 +35,7 @@
 
 @media (max-width: 480px) {
   .baseButton {
-    width: 85%;
+    width: 100%;
     padding: 18px 0;
     font-size: 17px;
   }
