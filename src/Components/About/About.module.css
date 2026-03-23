@@ -14,7 +14,6 @@ span {
   background-color: rgb(69, 72, 80);
   display: flex;
   justify-content: center;
-  /* Адаптивные отступы: масштабируются от высоты и ширины экрана */
   padding: clamp(30px, 6vh, 80px) clamp(15px, 3vw, 20px);
   color: white;
   min-height: 100svh;
@@ -27,7 +26,6 @@ span {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Адаптивное расстояние между текстом и картинкой */
   gap: clamp(20px, 4vw, 50px);
 }
 
@@ -41,7 +39,6 @@ span {
 }
 
 .title {
-  /* Резиновый шрифт: от 26px до 36px */
   font-size: clamp(26px, 4vw, 36px);
   margin-bottom: clamp(10px, 2vh, 15px);
 }
@@ -54,6 +51,7 @@ span {
 p {
   line-height: 1.6;
   font-size: clamp(14px, 2vw, 16px);
+  box-shadow: 1px;
 }
 
 a {
@@ -99,7 +97,7 @@ a {
 .fcItem:hover {
   transform: scale(
     1.05
-  ); /* Чуть уменьшил скейл, чтобы не дергалось соседнее пространство */
+  ); 
 }
 
 .about_right {
@@ -109,7 +107,6 @@ a {
 }
 
 .about_right img {
-  /* Динамическая высота картинки, чтобы она не ломала 100svh на низких экранах */
   max-height: clamp(300px, 60vh, 600px);
   max-width: 100%;
   height: auto;
@@ -117,7 +114,6 @@ a {
   object-fit: cover;
 }
 
-/* --- Мобильная адаптация --- */
 @media (max-width: 768px) {
   .about_container {
     flex-direction: column;

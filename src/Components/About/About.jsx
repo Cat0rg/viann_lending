@@ -15,15 +15,24 @@ export default function About() {
 
   return (
     <div className={style.container}>
-      <div className={`${style.about_container} ${inView ? style.inView : ""}`} ref={ref}>
+      <div
+        className={`${style.about_container} ${inView ? style.inView : ""}`}
+        ref={ref}
+      >
         <div className={style.about_left}>
           <div className={style.top}>
             <h2 className={style.title}>Про нас</h2>
             <hr className={style.hr} />
-            <p>VIANN — твій простір сили та стилю...</p>
+            <p>
+              VIANN — простір жіночого фітнес-одягу для тих, хто цінує комфорт,
+              стиль та якість. У нас ти знайдеш ідеальні образи для спорту та
+              активного способу життя.
+            </p>
             <hr className={style.hr} />
             <div className={style.likes}>
-              {likes.map((text, i) => <LikeItem key={i} text={text} index={i} />)}
+              {likes.map((text, i) => (
+                <LikeItem key={i} text={text} index={i} />
+              ))}
             </div>
           </div>
           <Button href="https://www.instagram.com/viann_ua/" inView={inView}>

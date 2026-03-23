@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <h3 className={styles.title}>Контакты</h3>
+        <h3 className={styles.title}>Контакти</h3>
 
         <div className={styles.content}>
           <a href="tel:+380951373195" className={styles.phoneLink}>
@@ -22,11 +22,11 @@ export default function Footer() {
 
 <a href="https://t.me/mm_hdhd" className={styles.tgButton}>
             <FaTelegramPlane size={24} className={styles.tgIcon} /> 
-            <span>Написать в Telegram</span>
+            <span>Написати в Telegram</span>
           </a>
         </div>
 
-        <p className={styles.copyright}>© 2026 VIANN. Все права защищены.</p>
+        <p className={styles.copyright}>© 2026 VIANN. Усі права захищені.</p>
       </div>
     </footer>
   );

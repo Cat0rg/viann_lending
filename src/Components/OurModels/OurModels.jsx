@@ -3,6 +3,15 @@ import style from "./OurModels.module.css";
 import { useInView } from "react-intersection-observer";
 import Button from "../Button/Button";
 
+import img1 from "../../assets/photo1.jpg";
+import img2 from "../../assets/photo2.jpg";
+import img3 from "../../assets/photo3.jpg";
+import img4 from "../../assets/photo4.jpg";
+import img5 from "../../assets/photo5.jpg";
+import img6 from "../../assets/photo6.jpg";
+import img7 from "../../assets/photo7.jpg";
+import img8 from "../../assets/photo8.jpg";
+
 const Slide = ({ path, indx }) => {
   const { ref, inView } = useInView({ threshold: 0.8 });
   return (
@@ -21,16 +30,7 @@ const Slide = ({ path, indx }) => {
 };
 
 export default function OurModels() {
-  const images = [
-    "/photo1.jpg",
-    "/photo2.jpg",
-    "/photo3.jpg",
-    "/photo4.jpg",
-    "/photo5.jpg",
-    "/photo6.jpg",
-    "/photo7.jpg",
-    "/photo8.jpg",
-  ];
+  const images = [img1, img2, img3, img4, img5, img6, img7, img8];
   const [currentSlide, setCurrentSlide] = useState(0);
   const { ref: sectionRef, inView } = useInView({ threshold: 0.2 });
 
@@ -45,7 +45,7 @@ export default function OurModels() {
 
   return (
     <section className={style.container} ref={sectionRef}>
-      <h3 className={style.title}>Наши модели</h3>
+      <h3 className={style.title}>Наші моделі</h3>
       <div className={style.albom_wrapper}>
         <div className={style.albom} onScroll={handleScroll}>
           {images.map((path, i) => (

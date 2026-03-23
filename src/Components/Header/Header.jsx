@@ -15,13 +15,12 @@ export default function Header() {
         
         <div className={styles.center}>
           <h2 className={inView ? styles.show : ""}>VIANN — магазин жіночого одягу для фітнесу</h2>
-          <p className={inView ? styles.show : ""}>твій простір сили та стилю</p>
+          <p className={inView ? styles.show : ""}>Простір де стиль поєднується з комфортом.</p>
         </div>
         
         <div className={styles.end}>
-          <p className={inView ? styles.show : ""}>КОМФОРТ, СТИЛЬ, ЕФЕКТИВНІСТЬ</p>
           <Button className={styles.button} href="https://www.instagram.com/viann_ua/" inView={inView}>
-            Смотреть каталог в Instagram
+            Дивитись Instagram
           </Button>
         </div>
       </div>

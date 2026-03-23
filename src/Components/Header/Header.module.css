@@ -3,7 +3,7 @@
 :root {
   --color-primary-navy: rgb(26, 43, 72);
   --color-accent-gold: rgb(197, 160, 130);
-  --color-text-light: rgb(229, 213, 197);
+  --color-text-light: #f2f2f2;
   --color-bg-dark: rgb(45, 45, 45);
   --color-btn-gradient: linear-gradient(135deg, #1a2b48 0%, #0d1624 100%);
 }
@@ -18,7 +18,6 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  color: white;
   position: relative;
   overflow: hidden; 
 }
@@ -78,7 +77,8 @@
 .header_content p {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  color: rgba(229, 213, 197, 0.8);
+    color: var(--color-text-light);
+
   margin-bottom: 30px;
 }
 

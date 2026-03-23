@@ -57,7 +57,7 @@
   gap: clamp(12px, 2vh, 20px);
   animation: fadeIn 0.4s ease-out;
   flex: 1; 
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .info {
