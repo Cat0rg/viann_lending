@@ -14,7 +14,7 @@
   justify-content: center;
   padding: 40px 20px;
   color: white;
-  min-height: 100dvh; /* Изменено на dvh для фикса на мобильных */
+  min-height: 100svh; 
 }
 
 .about_container {
@@ -70,13 +70,11 @@ a {
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-/* Анимация для элементов списка */
 .about_container.inView .fcItem {
   transform: translateX(0);
   opacity: 1;
 }
 
-/* Задержки для каждого элемента */
 .fcItem.item0 { transition-delay: 0.1s; }
 .fcItem.item1 { transition-delay: 0.3s; }
 .fcItem.item2 { transition-delay: 0.5s; }
