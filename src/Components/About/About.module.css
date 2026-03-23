@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
 
-*, p, span {
+*,
+p,
+span {
   font-family: "Comfortaa", sans-serif;
   margin: 0;
   padding: 0;
@@ -12,10 +14,11 @@
   background-color: rgb(69, 72, 80);
   display: flex;
   justify-content: center;
-  padding: 40px 20px;
+  /* Адаптивные отступы: масштабируются от высоты и ширины экрана */
+  padding: clamp(30px, 6vh, 80px) clamp(15px, 3vw, 20px);
   color: white;
-  min-height: 100svh; 
-  overflow-x: hidden; 
+  min-height: 100svh;
+  overflow-x: hidden;
 }
 
 .about_container {
@@ -24,7 +27,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  /* Адаптивное расстояние между текстом и картинкой */
+  gap: clamp(20px, 4vw, 50px);
 }
 
 .about_left {
@@ -37,17 +41,19 @@
 }
 
 .title {
-  font-size: 32px;
-  margin-bottom: 10px;
+  /* Резиновый шрифт: от 26px до 36px */
+  font-size: clamp(26px, 4vw, 36px);
+  margin-bottom: clamp(10px, 2vh, 15px);
 }
 
 .hr {
-  margin: 20px 0;
+  margin: clamp(15px, 3vh, 25px) 0;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 p {
   line-height: 1.6;
+  font-size: clamp(14px, 2vw, 16px);
 }
 
 a {
@@ -59,18 +65,20 @@ a {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-    margin-bottom: 20px;
-
+  gap: clamp(10px, 2vh, 15px);
+  margin-bottom: clamp(20px, 4vh, 40px);
 }
 
 .fcItem {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   transform: translateX(-50px);
   opacity: 0;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  /* Сделали анимацию появления еще более плавной */
+  transition:
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.6s ease;
 }
 
 .about_container.inView .fcItem {
@@ -78,14 +86,21 @@ a {
   opacity: 1;
 }
 
-.fcItem.item0 { transition-delay: 0.1s; }
-.fcItem.item1 { transition-delay: 0.3s; }
-.fcItem.item2 { transition-delay: 0.5s; }
-
-.fcItem:hover {
-  transform: scale(1.1);
+.fcItem.item0 {
+  transition-delay: 0.1s;
+}
+.fcItem.item1 {
+  transition-delay: 0.3s;
+}
+.fcItem.item2 {
+  transition-delay: 0.5s;
 }
 
+.fcItem:hover {
+  transform: scale(
+    1.05
+  ); /* Чуть уменьшил скейл, чтобы не дергалось соседнее пространство */
+}
 
 .about_right {
   flex: 1;
@@ -94,27 +109,33 @@ a {
 }
 
 .about_right img {
-  max-height: 600px;
+  /* Динамическая высота картинки, чтобы она не ломала 100svh на низких экранах */
+  max-height: clamp(300px, 60vh, 600px);
   max-width: 100%;
   height: auto;
   border-radius: 15px;
+  object-fit: cover;
 }
 
+/* --- Мобильная адаптация --- */
 @media (max-width: 768px) {
   .about_container {
     flex-direction: column;
     text-align: center;
+    justify-content: center;
+    height: 100%;
   }
 
   .about_left {
     align-items: center;
     text-align: center;
     justify-content: space-between;
+    height: 100%;
   }
 
   .likes {
-    align-items: center;
-
+    align-items: flex-start;
+    display: inline-flex;
   }
 
   .button {
@@ -131,21 +152,18 @@ a {
     background-position: center;
     background-repeat: no-repeat;
   }
+
+  .title,
+  p,
+  .fcItem span {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+  }
 }
-
 @media (max-width: 480px) {
-  .title {
-    font-size: 26px;
-  }
-
   .button {
-    width: 80%;
+    width: 100%;
     margin-bottom: 10px;
-    padding: 20px 0;
-    font-size: 18px;
-  }
-
-  .container {
-    padding: 30px 15px;
+    padding: clamp(15px, 3vh, 20px) 0;
+    font-size: clamp(16px, 4vw, 18px);
   }
 }

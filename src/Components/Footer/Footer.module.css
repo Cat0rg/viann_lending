@@ -1,0 +1,106 @@
+.footer {
+  background-color: #121212;
+  color: white;
+  padding: clamp(20px, 5vh, 40px) 16px clamp(10px, 3vh, 20px);
+  border-top: 1px solid #2a2a2a;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(16px, 3vh, 24px);
+  text-align: center;
+}
+
+.title {
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(15px, 2.5vh, 20px);
+  width: 100%;
+}
+
+.phoneLink {
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.socialIcon {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1; 
+  transition: transform 0.3s ease;
+}
+
+.socialIcon:active {
+  transform: scale(0.9);
+}
+
+.instIcon {
+  transform: translateY(-2px); 
+}
+
+.tgButton {
+  width: 100%;
+  max-width: 280px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 14px 24px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tgIcon {
+  transform: translateY(-2px); 
+}
+
+.copyright {
+  font-size: 11px;
+  color: #444;
+  margin-top: clamp(10px, 3vh, 20px);
+}
+
+@media (min-width: 768px) {
+  .container {
+    min-height: clamp(150px, 20vh, 200px);
+    height: auto;
+    justify-content: center;
+  }
+  
+  .content {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .tgButton {
+    width: auto;
+  }
+}

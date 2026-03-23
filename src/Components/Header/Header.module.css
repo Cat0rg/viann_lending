@@ -30,8 +30,7 @@
 
 .header_content h1,
 .header_content h2,
-.header_content p,
-.header_content button {
+.header_content p  {
   transform: translateX(-100px);
   opacity: 0;
   transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 1s ease-out;
@@ -55,11 +54,6 @@
   transition-delay: 0.6s;
 }
 
-.header_content button.show {
-  transform: translateX(0);
-  opacity: 1;
-  transition-delay: 0.8s;
-}
 
 .header_content h1 {
   font-family: "Dancing Script", cursive;
@@ -141,5 +135,7 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   }
 
-
+ .button{
+  padding: 15px;
+  }
 }

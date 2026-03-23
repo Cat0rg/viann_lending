@@ -23,7 +23,7 @@
     display: none;
   }
 
-  .container > section, 
+.container > section, 
   .container > div,
   .container > header {
     height: 100dvh;      
@@ -32,9 +32,14 @@
     scroll-snap-stop: always;
     flex-shrink: 0;       
   }
+  .container > footer {
+    height: auto;               /* Естественная высота контента */
+    scroll-snap-align: end;     /* Привязка к нижней части экрана */
+    scroll-snap-stop: normal;   /* Мягкая остановка */
+    flex-shrink: 0;
+  }
 }
 
-/* Стили для десктопа (от 769px) */
 @media (min-width: 769px) {
   .container > section, 
   .container > div, 

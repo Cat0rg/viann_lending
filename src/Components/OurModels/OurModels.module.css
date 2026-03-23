@@ -1,9 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
 
 .container {
-background: linear-gradient(172deg,rgba(235, 221, 221, 1) 0%, rgba(3, 5, 10, 1) 100%, rgba(0, 0, 0, 1) 100%, rgba(179, 16, 16, 1) 100%);
+  background: linear-gradient(
+    172deg,
+    rgba(235, 221, 221, 1) 0%,
+    rgba(3, 5, 10, 1) 100%,
+    rgba(0, 0, 0, 1) 100%,
+    rgba(179, 16, 16, 1) 100%
+  );
   color: #ffffff;
-  padding: 80px 0;
+  padding: clamp(30px, 6vh, 80px) 0;
   width: 100%;
   height: 100svh;
   font-family: "Comfortaa", sans-serif;
@@ -18,7 +24,7 @@ background: linear-gradient(172deg,rgba(235, 221, 221, 1) 0%, rgba(3, 5, 10, 1) 
   align-items: center;
   gap: 20px;
   max-width: 1200px;
-  margin: 0 auto 40px;
+  margin: 0 auto clamp(15px, 4vh, 40px);
   padding: 0 25px;
   font-size: 24px;
   font-weight: 300;
@@ -40,15 +46,16 @@ background: linear-gradient(172deg,rgba(235, 221, 221, 1) 0%, rgba(3, 5, 10, 1) 
 
 .albom_image {
   width: 100%;
-  height: 300px;
+  height: clamp(120px, 28vh, 300px);
   object-fit: cover;
   border-radius: 20px;
   display: block;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
 }
-.albom_image:hover{
-    transform: scale(1.2);
+.albom_image:hover {
+  transform: scale(1.2);
 }
 
 @media (max-width: 768px) {
@@ -75,7 +82,9 @@ background: linear-gradient(172deg,rgba(235, 221, 221, 1) 0%, rgba(3, 5, 10, 1) 
   .albom_slide {
     min-width: 80%;
     scroll-snap-align: center;
-    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease;
+    transition:
+      transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+      opacity 0.5s ease;
     transform: scale(0.9);
     opacity: 0.5;
   }
@@ -87,7 +96,8 @@ background: linear-gradient(172deg,rgba(235, 221, 221, 1) 0%, rgba(3, 5, 10, 1) 
   }
 
   .albom_image {
-    max-height: 50dvh;
+    height: clamp(320px, 50vh, 550px);
+    max-height: none;
     border-radius: 25px;
   }
 
@@ -97,16 +107,21 @@ background: linear-gradient(172deg,rgba(235, 221, 221, 1) 0%, rgba(3, 5, 10, 1) 
     gap: 10px;
     margin: 10px 0 40px;
   }
-  .btn{
-    margin: 0;
-}
-.pagination{
-      padding-bottom: 0;
+  .btn {
+    margin: 0 0 clamp(10px, 3vh, 20px) 0;
+  }
+  .btn a,
+  .btn button {
+    width: fit-content !important;
+    min-width: 250px; 
+    padding-left: 30px !important; 
+    padding-right: 30px !important;
+  }
+  .pagination {
+    padding-bottom: 0;
     margin: 0;
   }
 }
-
-
 
 .dot {
   width: 8px;
@@ -125,11 +140,10 @@ background: linear-gradient(172deg,rgba(235, 221, 221, 1) 0%, rgba(3, 5, 10, 1) 
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-
 .btn {
-  width: 100%;             /* Растягиваем обертку на всю ширину */
-  display: flex;           /* Включаем флексбокс */
-  justify-content: center; /* Центрируем по горизонтали */
-  margin-top: 20px;        /* Отступ сверху от точек пагинации */
-  margin-bottom: 40px;     /* Отступ снизу до края секции */
+  width: 100%; 
+  display: flex; 
+  justify-content: center; 
+  margin-top: 20px; 
+  margin-bottom: 40px;
 }

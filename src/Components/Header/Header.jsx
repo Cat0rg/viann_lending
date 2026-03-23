@@ -15,7 +15,7 @@ export default function Header() {
         </div>
         <div className={styles.end}>
           <p className={inView ? styles.show : ""}>КОМФОРТ, СТИЛЬ, ЕФЕКТИВНІСТЬ</p>
-          <Button href="https://www.instagram.com/viann_ua/" inView={inView}>
+          <Button className={styles.button} href="https://www.instagram.com/viann_ua/" inView={inView}>
             Смотреть каталог в Instagram
           </Button>
         </div>
