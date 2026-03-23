@@ -1,37 +1,23 @@
+import Button from "../Button/Button";
 import styles from "./Header.module.css";
 import { useInView } from "react-intersection-observer";
 
 export default function Header() {
-  const { ref, inView } = useInView({
-    threshold: 0.3,
-    triggerOnce: false,
-  });
+  const { ref, inView } = useInView({ threshold: 0.3 });
 
   return (
     <div className={styles.header_container}>
       <div ref={ref} className={styles.header_content}>
         <h1 className={inView ? styles.show : ""}>VIANN</h1>
         <div className={styles.center}>
-          <h2 className={inView ? styles.show : ""}>
-            VIANN — магазин жіночого одягу для фітнесу
-          </h2>
-          <p className={inView ? styles.show : ""}>
-            твій простір сили та стилю
-          </p>
+          <h2 className={inView ? styles.show : ""}>VIANN — магазин жіночого одягу для фітнесу</h2>
+          <p className={inView ? styles.show : ""}>твій простір сили та стилю</p>
         </div>
         <div className={styles.end}>
-          <p className={inView ? styles.show : ""}>
-            КОМФОРТ, СТИЛЬ, ЕФЕКТИВНІСТЬ
-          </p>
-          <button className={inView ? styles.show : ""}>
-            <a
-              href="https://www.instagram.com/viann_ua/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Смотреть каталог в Instagram
-            </a>
-          </button>
+          <p className={inView ? styles.show : ""}>КОМФОРТ, СТИЛЬ, ЕФЕКТИВНІСТЬ</p>
+          <Button href="https://www.instagram.com/viann_ua/" inView={inView}>
+            Смотреть каталог в Instagram
+          </Button>
         </div>
       </div>
     </div>

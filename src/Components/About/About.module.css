@@ -60,6 +60,8 @@ a {
   display: flex;
   flex-direction: column;
   gap: 10px;
+    margin-bottom: 20px;
+
 }
 
 .fcItem {
@@ -84,34 +86,6 @@ a {
   transform: scale(1.1);
 }
 
-.button {
-  padding: 14px 28px;
-  border-radius: 30px;
-  border: none;
-  color: #fff;
-  background: linear-gradient(90deg, #ff0080, #ff8c00);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 500;
-  margin-top: 40px;
-  transform: translateX(-50px);
-  opacity: 0;
-  transition: transform 0.5s ease, opacity 0.5s ease, background-color 0.3s ease;
-  display: inline-block;
-  text-align: center;
-}
-
-.about_container.inView .showButton {
-  transform: translateX(0);
-  opacity: 1;
-  transition-delay: 0.7s;
-}
-
-.button:hover {
-  transform: scale(1.05);
-  background: linear-gradient(90deg, #ff3385, #ffaa33);
-}
 
 .about_right {
   flex: 1;
@@ -140,6 +114,7 @@ a {
 
   .likes {
     align-items: center;
+
   }
 
   .button {
