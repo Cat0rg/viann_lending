@@ -28,7 +28,7 @@
   max-width: 500px;
 }
 
-.header_content h1,
+.header_content .logoWrapper,
 .header_content h2,
 .header_content p  {
   transform: translateX(-100px);
@@ -36,7 +36,7 @@
   transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 1s ease-out;
 }
 
-.header_content h1.show {
+.header_content .logoWrapper.show {
   transform: translateX(0);
   opacity: 1;
   transition-delay: 0.2s;
@@ -54,12 +54,17 @@
   transition-delay: 0.6s;
 }
 
+.logoWrapper {
+  margin: 0 0 20px 0;
+  padding: 0;
+}
 
-.header_content h1 {
-  font-family: "Dancing Script", cursive;
-  font-size: 82px;
-  color: var(--color-accent-gold);
-  margin-bottom: 10px;
+.logo {
+  width: 100%;
+  max-width: 320px; 
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .header_content h2 {
@@ -96,9 +101,12 @@
     align-items: center;
   }
   
-  .header_content h1 {
-    font-size: 54px;
+  .logoWrapper {
     margin: 0;
+  }
+  
+  .logo {
+    max-width: 100px; 
   }
 
   .header_content .center {
@@ -135,7 +143,7 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   }
 
- .button{
-  padding: 15px;
+  .button {
+    padding: 15px;
   }
 }

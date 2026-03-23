@@ -8,11 +8,16 @@ export default function Header() {
   return (
     <div className={styles.header_container}>
       <div ref={ref} className={styles.header_content}>
-        <h1 className={inView ? styles.show : ""}>VIANN</h1>
+        
+        <h1 className={`${styles.logoWrapper} ${inView ? styles.show : ""}`}>
+          <img src="/Logo.png" alt="VIANN" className={styles.logo} />
+        </h1>
+        
         <div className={styles.center}>
           <h2 className={inView ? styles.show : ""}>VIANN — магазин жіночого одягу для фітнесу</h2>
           <p className={inView ? styles.show : ""}>твій простір сили та стилю</p>
         </div>
+        
         <div className={styles.end}>
           <p className={inView ? styles.show : ""}>КОМФОРТ, СТИЛЬ, ЕФЕКТИВНІСТЬ</p>
           <Button className={styles.button} href="https://www.instagram.com/viann_ua/" inView={inView}>
