@@ -39,7 +39,7 @@
   .container > section, 
   .container > div, 
   .container > header {
-    height: auto;        
+    height: 100dvh;        
     min-height: 100dvh;    
   }
 }
