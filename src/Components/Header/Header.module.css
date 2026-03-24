@@ -1,4 +1,3 @@
-
 :root {
   --color-primary-navy: rgb(26, 43, 72);
   --color-accent-gold: rgb(197, 160, 130);
@@ -9,7 +8,7 @@
 
 .header_container {
   width: 100%;
-  height: 100svh; 
+  height: 100svh;
   background-image: url("/header_photo.webp");
   background-size: cover;
   background-position: center;
@@ -18,7 +17,7 @@
   align-items: center;
   justify-content: flex-start;
   position: relative;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .header_content {
@@ -28,10 +27,12 @@
 
 .header_content .logoWrapper,
 .header_content h2,
-.header_content p  {
+.header_content p {
   transform: translateX(-100px);
   opacity: 0;
-  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 1s ease-out;
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 1s ease-out;
 }
 
 .header_content .logoWrapper.show {
@@ -59,7 +60,7 @@
 
 .logo {
   width: 100%;
-  max-width: 320px; 
+  max-width: 320px;
   height: auto;
   object-fit: contain;
   display: block;
@@ -76,11 +77,27 @@
 .header_content p {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-    color: var(--color-text-light);
+  color: var(--color-text-light);
 
   margin-bottom: 30px;
 }
 
+.logo.desktop {
+  display: none;
+}
+
+.logo.mobile {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .logo.desktop {
+    display: block;
+  }
+  .logo.mobile {
+    display: none;
+  }
+}
 
 @media (max-width: 768px) {
   .header_container {
@@ -92,27 +109,27 @@
     margin-left: 0;
     width: 100%;
     max-width: 100%;
-    min-height: 100svh; 
+    min-height: 100svh;
     padding: 30px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
   }
-  
+
   .logoWrapper {
     margin: 0;
   }
-  
+
   .logo {
-    max-width: 100px; 
+    max-width: 100px;
   }
 
   .header_content .center {
     align-self: flex-start;
     text-align: left;
     padding-left: 20px;
-    padding-right: 20px; 
+    padding-right: 20px;
     width: 100%;
     box-sizing: border-box;
   }
@@ -131,7 +148,7 @@
   .header_content .end {
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     text-align: center;
   }
 

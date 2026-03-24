@@ -9,7 +9,16 @@ export default function Header() {
     <div className={styles.header_container}>
       <div ref={ref} className={styles.header_content}>
         <h1 className={`${styles.logoWrapper} ${inView ? styles.show : ""}`}>
-          <img src="/logo.webp" alt="VIANN" className={styles.logo} />
+          <img
+            src="/logo1.webp"
+            alt="VIANN"
+            className={`${styles.logo} ${styles.mobile}`}
+          />
+          <img
+            src="/logo.webp"
+            alt="VIANN"
+            className={`${styles.logo} ${styles.desktop}`}
+          />
         </h1>
 
         <div className={styles.center}>

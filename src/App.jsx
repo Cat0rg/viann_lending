@@ -7,13 +7,13 @@ import OurStore from "./Components/OurStore/OurStore";
 
 function App() {
   return (
-    <div className="container">
+    <main className="container">
       <Header />
       <About />
       <OurModels />
       <OurStore />
       <Footer />
-    </div>
+    </main>
   );
 }
 
