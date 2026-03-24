@@ -6,17 +6,23 @@ export default function Header() {
   const { ref, inView } = useInView({ threshold: 0.3 });
 
   return (
-    <div className={styles.header_container}>
+    <header className={styles.header_container}>
       <div ref={ref} className={styles.header_content}>
         <h1 className={`${styles.logoWrapper} ${inView ? styles.show : ""}`}>
           <img
+            fetchpriority="high"
             src="/logo1.webp"
             alt="VIANN"
+            width={100}
+            height={100}
             className={`${styles.logo} ${styles.mobile}`}
           />
           <img
+            fetchpriority="high"
             src="/logo.webp"
             alt="VIANN"
+            width={320}
+            height={320}
             className={`${styles.logo} ${styles.desktop}`}
           />
         </h1>
@@ -40,6 +46,6 @@ export default function Header() {
           </Button>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
