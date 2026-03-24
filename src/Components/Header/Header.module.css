@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@400;500&family=Playfair+Display:wght@700&display=swap");
 
 :root {
   --color-primary-navy: rgb(26, 43, 72);
@@ -11,7 +10,7 @@
 .header_container {
   width: 100%;
   height: 100svh; 
-  background-image: url("/photomain2.png");
+  background-image: url("/header_photo.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

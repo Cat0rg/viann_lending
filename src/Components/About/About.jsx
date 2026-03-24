@@ -40,7 +40,7 @@ export default function About() {
           </Button>
         </div>
         <div className={style.about_right}>
-          <img src="/photo7.jpg" alt="VIANN" />
+          <img src="/photo_about.webp" alt="VIANN" />
         </div>
       </div>
     </div>

@@ -9,7 +9,6 @@
   background: linear-gradient(90deg, #ff0080, #ff8c00);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   cursor: pointer;
-  font-family: "Comfortaa", sans-serif;
   font-size: clamp(14px, 2.5vw, 17px);
   font-weight: 500;
   text-decoration: none;

@@ -1,16 +1,16 @@
-import { useState, useRef } from "react";
 import style from "./OurModels.module.css";
 import { useInView } from "react-intersection-observer";
 import Button from "../Button/Button";
 
-import img1 from "../../assets/photo1.jpg";
-import img2 from "../../assets/photo2.jpg";
-import img3 from "../../assets/photo3.jpg";
-import img4 from "../../assets/photo4.jpg";
-import img5 from "../../assets/photo5.jpg";
-import img6 from "../../assets/photo6.jpg";
-import img7 from "../../assets/photo7.jpg";
-import img8 from "../../assets/photo8.jpg";
+import img1 from "../../assets/photo1.webp";
+import img2 from "../../assets/photo2.webp";
+import img3 from "../../assets/photo3.webp";
+import img4 from "../../assets/photo4.webp";
+import img5 from "../../assets/photo5.webp";
+import img6 from "../../assets/photo6.webp";
+import img7 from "../../assets/photo7.webp";
+import img8 from "../../assets/photo8.webp";
+import { useState } from "react";
 
 const Slide = ({ path, indx }) => {
   const { ref, inView } = useInView({ threshold: 0.8 });
